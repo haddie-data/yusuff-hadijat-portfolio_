@@ -1,0 +1,545 @@
+
+/* =================================
+   1. GLOBAL STYLING
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2878C7;
+    --secondary: #A78BFA;
+    --accent: #64B5F6;
+    --dark: #172554;
+    --light: #FFFFFF;
+
+    /* BACKGROUND COLOURS */
+    --background: #EAF6FF;
+    --soft-blue: #BDE0FE;
+    --soft-lavender: #F1ECFF;
+
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1;
+}
+
+@supports (font-variation-settings: normal) {
+    :root {
+        font-family: InterVariable, sans-serif;
+    }
+}
+
+body {
+    
+    font-family: inherit;
+    background-color: var(--background);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+
+/* =================================
+   2. NAVIGATION BAR
+================================= */
+
+header {
+    background-color: var(--light);
+    padding: 20px 8%;
+    box-shadow: 0 3px 15px rgba(40, 120, 199, 0.08);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    color: var(--primary);
+    font-size: 28px;
+    font-weight: 800;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--primary);
+}
+
+/* =================================
+   3. HERO SECTION
+================================= */
+
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 70px 8%;
+    background: linear-gradient(
+        120deg,
+        #EAF6FF,
+        #F1ECFF,
+        #FFFFFF
+    )
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.welcome {
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 5vw, 60px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    display: block;
+    color: #2878C7;
+}
+
+.hero h2 {
+    color: #7C5CC4;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.intro {
+    font-size: 16px;
+    color: #625b75;
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+/* =================================
+   4. BUTTONS
+================================= */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: linear-gradient(
+        135deg,
+        #2878C7,
+        #A78BFA
+    );
+    color: #FFFFFF;
+    box-shadow: 0 5px 15px rgba(40, 120, 199, 0.2);
+}
+
+.secondary-btn {
+    background-color: #FFFFFF;
+    border: 2px solid #A78BFA;
+    color: #2878C7;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(40, 120, 199, 0.2);
+}
+
+/* =================================
+   5. PROFILE IMAGE
+================================= */
+
+.hero-image {
+     width: 330px;
+    height: 380px;
+    flex-shrink: 0;
+    border-radius: 45% 45% 20px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #64B5F6,
+        #A78BFA,
+        #BDE0FE
+    );
+
+    padding: 8px;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+/* =================================
+   6. FOOTER
+================================= */
+
+footer {
+    background-color: #172554;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 22px;
+    font-size: 14px;
+}
+
+/* =================================
+   7. RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 6%;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        width: 260px;
+        height: 300px;
+    }
+}
+
+
+/* =================================
+   8. ABOUT ME PAGE
+================================= */
+
+.about-section {
+    min-height: 80vh;
+    padding: 80px 10%;
+    background: linear-gradient(
+        135deg,
+        #EAF6FF,
+        #F1ECFF,
+        #FFFFFF
+    );
+    text-align: center;
+}
+
+.about-section h1 {
+    font-size: 48px;
+    color: #2878C7;
+    margin-bottom: 15px;
+}
+
+.about-section h2 {
+    font-size: 25px;
+    color: #A78BFA;
+    margin-bottom: 30px;
+}
+
+.about-section p {
+    max-width: 750px;
+    margin: 0 auto 20px;
+    font-size: 17px;
+    line-height: 1.9;
+    color: #172554;
+}
+
+
+/* =================================
+   9. PROJECTS PAGE
+================================= */
+
+.projects-section {
+    min-height: 80vh;
+    padding: 70px 8%;
+    background: linear-gradient(
+        135deg,
+        #EAF6FF,
+        #F1ECFF,
+        #FFFFFF
+    );
+    text-align: center;
+}
+
+.projects-section h1 {
+    font-size: 45px;
+    color: #2878C7;
+    margin-bottom: 15px;
+}
+
+.projects-section h2 {
+    font-size: 23px;
+    color: #A78BFA;
+    margin-bottom: 45px;
+}
+
+/* PROJECT CARD CONTAINER */
+
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* INDIVIDUAL PROJECT CARDS */
+
+.project-card {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(40, 120, 199, 0.08);
+    border: 1px solid #DCEBFA;
+    transition: 0.3s;
+}
+
+/* CARD HOVER EFFECT */
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(40, 120, 199, 0.15);
+}
+
+/* PROJECT TITLES */
+
+.project-card h3 {
+    color: #2878C7;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+/* PROJECT DESCRIPTIONS */
+
+.project-card p {
+    color: #52627A;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* PROJECT TECHNOLOGY LABELS */
+
+.project-card span {
+    display: inline-block;
+    background-color: #F1ECFF;
+    color: #7253B5;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 768px) {
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =================================
+   10. CONTACT PAGE
+================================= */
+
+.contact-section {
+    min-height: 80vh;
+    padding: 70px 8%;
+    background: linear-gradient(
+        135deg,
+        #EAF6FF,
+        #F1ECFF,
+        #FFFFFF
+    );
+    text-align: center;
+}
+
+.contact-section h1 {
+    font-size: 45px;
+    color: #2878C7;
+    margin-bottom: 15px;
+}
+
+.contact-section h2 {
+    font-size: 23px;
+    color: #A78BFA;
+    margin-bottom: 20px;
+}
+
+.contact-section > p {
+    color: #52627A;
+    margin-bottom: 25px;
+}
+
+/* CONTACT INFORMATION */
+
+.contact-info {
+    margin: 25px auto;
+    max-width: 550px;
+    background-color: #FFFFFF;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(40, 120, 199, 0.08);
+}
+
+.contact-info p {
+    margin: 12px 0;
+    color: #172554;
+}
+
+.contact-info a {
+    color: #2878C7;
+    text-decoration: none;
+}
+
+/* CONTACT FORM */
+
+#contactForm {
+    max-width: 550px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #BDE0FE;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    background-color: #FFFFFF;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+    border-color: #2878C7;
+    box-shadow: 0 0 8px rgba(40, 120, 199, 0.15);
+}
+
+#contactForm textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* SEND MESSAGE BUTTON */
+
+#contactForm button {
+    background: linear-gradient(
+        135deg,
+        #2878C7,
+        #A78BFA
+    );
+    color: #FFFFFF;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#contactForm button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(40, 120, 199, 0.2);
+}
+
+/* FORM RESPONSE */
+
+#formResponse {
+    color: #2878C7;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+
+/* =================================
+   11. ACTIVE NAVIGATION LINK
+================================= */
+
+nav ul li a.active {
+    color: #2878C7;
+    border-bottom: 3px solid #A78BFA;
+    padding-bottom: 5px;
+}
+
+/* Mobile Navigation Button */
+.menu-toggle {
+    display: none;
+    background: #2878C7;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* Mobile Navigation Layout */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 15px 0;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+}
